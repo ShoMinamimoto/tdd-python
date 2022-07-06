@@ -8,7 +8,8 @@ class NewVisitorTest(unittest.TestCase):
     def setUp(self):
         options = webdriver.firefox.options.Options()
         options.add_argument("-profile")
-        options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/d6rakj4m.default-release")
+        #options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/d6rakj4m.default-release")
+        options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/9dip8njs.default")
 
         self.browser = webdriver.Firefox(options=options)
 
