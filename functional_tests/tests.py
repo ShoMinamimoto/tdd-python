@@ -11,8 +11,8 @@ class NewVisitorTest(LiveServerTestCase):
     def setUp(self):
         self.options = webdriver.firefox.options.Options()
         self.options.add_argument("-profile")
-        #options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/d6rakj4m.default-release")
-        self.options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/9dip8njs.default")
+        self.options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/d6rakj4m.default-release")
+        #self.options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/9dip8njs.default")
 
         self.browser = webdriver.Firefox(options=self.options)
 
