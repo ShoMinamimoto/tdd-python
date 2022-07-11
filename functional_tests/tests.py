@@ -20,6 +20,9 @@ class NewVisitorTest(StaticLiveServerTestCase):
             self.options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/9dip8njs.default")
 
         self.browser = webdriver.Firefox(options=self.options)
+        staging_server = os.environ.get('STAGING_SERVER')
+        if staging_server:
+            self.live_server_url = 'http://' + staging_server
 
     def tearDown(self):
         self.browser.quit()
