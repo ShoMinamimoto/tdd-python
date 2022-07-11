@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.keys import Keys
 import time
+import os
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
 MAX_WAIT = 10
@@ -11,8 +12,12 @@ class NewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
         self.options = webdriver.firefox.options.Options()
         self.options.add_argument("-profile")
-        self.options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/d6rakj4m.default-release")
-        #self.options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/9dip8njs.default")
+
+        at_work = os.environ.get('LC_ASYS_USER')
+        if at_work:
+            self.options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/d6rakj4m.default-release")
+        else: 
+            self.options.add_argument("/home/rainer/snap/firefox/common/.mozilla/firefox/9dip8njs.default")
 
         self.browser = webdriver.Firefox(options=self.options)
 
