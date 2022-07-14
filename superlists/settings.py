@@ -144,3 +144,9 @@ LOGGING = {
         },
         'root': {'level': 'INFO'},
 }
+
+EMAIL_HOST = 'smtp.strato.de'
+EMAIL_HOST_USER = 'webmaster@minamimoto.de'
+EMAIL_HOST_PASSWORD = os.environ.get('WEBMASTER_EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
